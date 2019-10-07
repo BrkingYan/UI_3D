@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/main/java/ClockDemo/GLRender.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/D3_Scene/ThirdExp.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Display/Model/PaintUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Display/Painter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ShadowDemo/GLRender.java" charset="GBK" />
+  </component>
+</project>
