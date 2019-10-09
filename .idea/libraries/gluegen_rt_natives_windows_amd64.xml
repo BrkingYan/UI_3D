@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="gluegen-rt-natives-windows-amd64">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/libs/gluegen-rt-natives-windows-amd64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/gluegen-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/jogl-all-natives-windows-amd64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/jogl-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/mfz-rxtx-2.2-20081207-win-x64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/RXTXcomm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/src/libs" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

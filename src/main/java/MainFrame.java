@@ -7,12 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-//²ã´Î½á¹¹  Frame > JPanel > JLabel
+//ï¿½ï¿½Î½á¹¹  Frame > JPanel > JLabel
 
 /*
-* ÓÃÓÚ·ÅÖÃ¾²Ì¬×é¼þ
+* ï¿½ï¿½ï¿½Ú·ï¿½ï¿½Ã¾ï¿½Ì¬ï¿½ï¿½ï¿½
 * */
-public class MainFrame extends JFrame implements Subject {
+public class MainFrame extends JFrame {
 
 
     private ArrayList<Observer> observers = new ArrayList<Observer>();
@@ -34,14 +34,14 @@ public class MainFrame extends JFrame implements Subject {
     }
 
     private void initMainFrame(){
-        //ÏÔÊ¾µ±Ç°ÆÁÄ»·Ö±æÂÊ
+        //ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½Ä»ï¿½Ö±ï¿½ï¿½ï¿½
         int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
         int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
 
 
-        //Ìí¼Ó¾²Ì¬×é¼þºÍÍ¼Æ¬
+        //ï¿½ï¿½Ó¾ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬
         /*JLabel nodeLabel = new JLabel();
-        ImageIcon img = new ImageIcon("node.png");// ´´½¨Í¼Æ¬¶ÔÏó
+        ImageIcon img = new ImageIcon("node.png");// ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
         nodeLabel.setIcon(img);
         nodeLabel.setBounds(100,100,100,img.getIconHeight());
         nodeLabel.setBackground(Color.BLUE);*/
@@ -50,13 +50,13 @@ public class MainFrame extends JFrame implements Subject {
         //panel.setOpaque(false);
 
 
-        // Ö÷´°¿ÚÉèÖÃ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         JFrame.setDefaultLookAndFeelDecorated(true);
         this.setTitle("GUI");
         this.setVisible(true);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //this.setSize(1500,800);//Õû¸ö´°ÌåµÄ´óÐ¡
+        //this.setSize(1500,800);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð¡
         this.setBounds(0, 0, 1500, 1000);
 
     }
@@ -73,7 +73,7 @@ public class MainFrame extends JFrame implements Subject {
         }
     }
 
-    public void notifyObservers() {
+    /*public void notifyObservers() {
         for (Observer observer : observers){
             observer.update(speed);
         }
@@ -82,18 +82,18 @@ public class MainFrame extends JFrame implements Subject {
     public void setSpeed(float speed) {
         this.speed = speed;
         notifyObservers();
-    }
+    }*/
 
     /*public void GUI() {
-        setTitle("Í¼Ïñ²âÊÔ");
+        setTitle("Í¼ï¿½ï¿½ï¿½ï¿½ï¿½");
         JPanel panel = new JPanel();
         JLabel label = new JLabel();
-        ImageIcon img = new ImageIcon("node.png");// ´´½¨Í¼Æ¬¶ÔÏó
+        ImageIcon img = new ImageIcon("node.png");// ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
         label.setIcon(img);
         panel.add(label);
         add(panel);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);// JFrame×î´ó»¯
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// ÈÃJFrameµÄ¹Ø±Õ°´Å¥Æð×÷ÓÃ
-        setVisible(true);// ÏÔÊ¾JFrame
+        setExtendedState(JFrame.MAXIMIZED_BOTH);// JFrameï¿½ï¿½ï¿½
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// ï¿½ï¿½JFrameï¿½Ä¹Ø±Õ°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        setVisible(true);// ï¿½ï¿½Ê¾JFrame
     }*/
 }

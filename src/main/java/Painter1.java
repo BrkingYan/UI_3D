@@ -14,7 +14,7 @@ public class Painter1 extends Painter implements GLEventListener {
     private float shift;
     private float speed;
 
-    //³õÊ¼»¯OpenGL
+    //ï¿½ï¿½Ê¼ï¿½ï¿½OpenGL
     public void init(GLAutoDrawable glAutoDrawable) {
         final GL2 gl = glAutoDrawable.getGL().getGL2();
         gl.glShadeModel(GL2.GL_SMOOTH);
@@ -30,7 +30,7 @@ public class Painter1 extends Painter implements GLEventListener {
 
     }
 
-    //»­Í¼
+    //ï¿½ï¿½Í¼
     public void display(GLAutoDrawable glAutoDrawable) {
         final GL2 gl = glAutoDrawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
@@ -68,5 +68,17 @@ public class Painter1 extends Painter implements GLEventListener {
 
     public void update(float speed) {
         this.speed = speed;
+    }
+
+    public void update(float roll_degree, float pit_degree) {
+
+    }
+
+    public void update1(String str) {
+
+    }
+
+    public void update2(float roll_degree, float pit_degree) {
+
     }
 }

@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         MainFrame frame = new MainFrame();
 
-        //¸ø¶¨×ªËÙ
+        //ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½
         float  speed = 0.1f;
-        frame.setSpeed(speed);
+       //frame.setSpeed(speed);
     }
 }

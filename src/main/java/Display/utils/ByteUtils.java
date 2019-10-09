@@ -1,6 +1,8 @@
 package Display.utils;
 
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -71,4 +73,40 @@ public class ByteUtils {
 		}
 		return hex.toUpperCase(Locale.getDefault());
 	}
+
+	public static List<Float> bytesToFloat(List<Integer> list){
+		List<Float> res = new ArrayList<Float>();
+		for (int i = 1;i<list.size();i+=2){
+			if (i+1 >= list.size()){
+				break;
+			}
+			int a = list.get(i);
+			int b = list.get(i+1);
+			float ret = a * 256 + b;
+			if (ret > 32767){
+				ret -= 65536;
+			}
+			ret /= 100;
+			res.add(ret);
+		}
+		return res;
+	}
+
+	public static List<Float> bytesToFloat_Degree(List<Integer> list){
+		List<Float> res = new ArrayList<Float>();
+		for (int i = 1;i<list.size();i++){
+			int a = list.get(i);
+			float aa = (float)a;
+			if (aa > 128){
+				aa -= 256;
+			}
+			aa /= 100;
+			res.add(aa);
+		}
+		return res;
+	}
+
+	/*private static void concatHex(byte num1,byte num2){
+		byte hex1 =
+	}*/
 }

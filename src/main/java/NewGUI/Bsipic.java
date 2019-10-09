@@ -20,9 +20,9 @@ public class Bsipic {
 
     double[] g_eye = new double[3];
     double[] g_look = new double[3];
-    float rad_xz;                            //½Ç¶È    0
-    float g_Angle;                           //×óÓÒ×ª  0
-    float g_elev;                            //Ñö¸©½Ç  0
+    float rad_xz;                            //ï¿½Ç¶ï¿½    0
+    float g_Angle;                           //ï¿½ï¿½ï¿½ï¿½×ª  0
+    float g_elev;                            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  0
     boolean iskeydown = false;
 
     GLU glu;
@@ -39,13 +39,13 @@ public class Bsipic {
         gl.glClearDepth(1.0f);                      // Depth Buffer Setup
         gl.glEnable(GL2.GL_DEPTH_TEST);                          // Enables Depth Testing
         gl.glDepthFunc(GL2.GL_LEQUAL);                               // The Type Of Depth Testing To Do
-        gl.glHint(GL2.GL_PERSPECTIVE_CORRECTION_HINT, GL2.GL_FASTEST);    // ÕæÕý¾«Ï¸µÄÍ¸ÊÓÐÞÕý
+        gl.glHint(GL2.GL_PERSPECTIVE_CORRECTION_HINT, GL2.GL_FASTEST);    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
         g_eye[0] = MAP;   //
         g_eye[2] = -MAP;  //
-        g_Angle = 0;      //·½Î»½Ç
-        g_elev = 0;       //¸©Ñö½Ç
+        g_Angle = 0;      //ï¿½ï¿½Î»ï¿½ï¿½
+        g_elev = 0;       //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
         g_text = glu.gluNewQuadric();
@@ -66,36 +66,36 @@ public class Bsipic {
     boolean DisplaySideScene() {
 
         if (g_elev < -100) {
-            g_elev = -100;  //Ñö¸©½Ç
+            g_elev = -100;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_elev > 100) {
-            g_elev = 100;   //Ñö¸©½Ç
+            g_elev = 100;   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         rad_xz = 3.13149f * (float) g_Angle / 180.0f;
 
         /*if (g_eye[0] < -(MAP * 2 - 20)) {
-            g_eye[0] = -(MAP * 2 - 20); //ÊÓµãµÄX·ÖÁ¿ÏÞÖÆ
+            g_eye[0] = -(MAP * 2 - 20); //ï¿½Óµï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_eye[0] > (MAP * 2 - 20)) {
             g_eye[0] = (MAP * 2 - 20);
         }
         if (g_eye[2] < -(MAP * 2 - 20)) {
-            g_eye[2] = -(MAP * 2 - 20); //ÊÓµãµÄZ·ÖÁ¿ÏÞÖÆ
+            g_eye[2] = -(MAP * 2 - 20); //ï¿½Óµï¿½ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_eye[2] > (MAP * 2 - 20)) {
             g_eye[2] = (MAP * 2 - 20);
         }*/
-        g_eye[1] = 1.8;//ÉèÖÃÉãÏñ»ú¶ÔµØÎ»ÖÃ¸ß
+        g_eye[1] = 1.8;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Î»ï¿½Ã¸ï¿½
 
 
-        //ÉãÏñ»úµÄ·½Ïò
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
         g_look[0] = g_eye[0] + 100 * (double) Math.cos(rad_xz);
         g_look[2] = g_eye[2] + 100 * (double) Math.sin(rad_xz);
         g_look[1] = g_eye[1];
-        //½¨Á¢modelview¾ØÕó·½Ïò
+        //ï¿½ï¿½ï¿½ï¿½modelviewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         /*
-         * v1Ô½´ó£¬±íÊ¾¸ß¶ÈÔ½¸ß
+         * v1Ô½ï¿½ó£¬±ï¿½Ê¾ï¿½ß¶ï¿½Ô½ï¿½ï¿½
          * */
         glu.gluLookAt(1f, 2.5, -23.5,
                 0, (g_look[1]), 0,
@@ -108,36 +108,36 @@ public class Bsipic {
     boolean DisplayStereoScene() {
 
         if (g_elev < -100) {
-            g_elev = -100;  //Ñö¸©½Ç
+            g_elev = -100;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_elev > 100) {
-            g_elev = 100;   //Ñö¸©½Ç
+            g_elev = 100;   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         rad_xz = 3.13149f * (float) g_Angle / 180.0f;
 
         /*if (g_eye[0] < -(MAP * 2 - 20)) {
-            g_eye[0] = -(MAP * 2 - 20); //ÊÓµãµÄX·ÖÁ¿ÏÞÖÆ
+            g_eye[0] = -(MAP * 2 - 20); //ï¿½Óµï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_eye[0] > (MAP * 2 - 20)) {
             g_eye[0] = (MAP * 2 - 20);
         }
         if (g_eye[2] < -(MAP * 2 - 20)) {
-            g_eye[2] = -(MAP * 2 - 20); //ÊÓµãµÄZ·ÖÁ¿ÏÞÖÆ
+            g_eye[2] = -(MAP * 2 - 20); //ï¿½Óµï¿½ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_eye[2] > (MAP * 2 - 20)) {
             g_eye[2] = (MAP * 2 - 20);
         }*/
-        g_eye[1] = 1.8;//ÉèÖÃÉãÏñ»ú¶ÔµØÎ»ÖÃ¸ß
+        g_eye[1] = 1.8;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Î»ï¿½Ã¸ï¿½
 
 
-        //ÉãÏñ»úµÄ·½Ïò
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
         g_look[0] = g_eye[0] + 100 * (double) Math.cos(rad_xz);
         g_look[2] = g_eye[2] + 100 * (double) Math.sin(rad_xz);
         g_look[1] = g_eye[1];
-        //½¨Á¢modelview¾ØÕó·½Ïò
+        //ï¿½ï¿½ï¿½ï¿½modelviewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         /*
-        * v1Ô½´ó£¬±íÊ¾¸ß¶ÈÔ½¸ß
+        * v1Ô½ï¿½ó£¬±ï¿½Ê¾ï¿½ß¶ï¿½Ô½ï¿½ï¿½
         * */
         glu.gluLookAt(1.0f, 5.5, -22,
                 0, (g_look[1] -30), 0,
@@ -150,41 +150,41 @@ public class Bsipic {
     boolean DisplayTopScene() {
 
         if (g_elev < -100) {
-            g_elev = -100;  //Ñö¸©½Ç
+            g_elev = -100;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_elev > 100) {
-            g_elev = 100;   //Ñö¸©½Ç
+            g_elev = 100;   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         rad_xz = 3.13149f * (float) g_Angle / 180.0f;
 
         /*if (g_eye[0] < -(MAP * 2 - 20)) {
-            g_eye[0] = -(MAP * 2 - 20); //ÊÓµãµÄX·ÖÁ¿ÏÞÖÆ
+            g_eye[0] = -(MAP * 2 - 20); //ï¿½Óµï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_eye[0] > (MAP * 2 - 20)) {
             g_eye[0] = (MAP * 2 - 20);
         }
         if (g_eye[2] < -(MAP * 2 - 20)) {
-            g_eye[2] = -(MAP * 2 - 20); //ÊÓµãµÄZ·ÖÁ¿ÏÞÖÆ
+            g_eye[2] = -(MAP * 2 - 20); //ï¿½Óµï¿½ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         if (g_eye[2] > (MAP * 2 - 20)) {
             g_eye[2] = (MAP * 2 - 20);
         }*/
-        g_eye[1] = 1.8;//ÉèÖÃÉãÏñ»ú¶ÔµØÎ»ÖÃ¸ß
+        g_eye[1] = 1.8;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Î»ï¿½Ã¸ï¿½
 
 
-        //ÉãÏñ»úµÄ·½Ïò
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
         g_look[0] = g_eye[0] + 100 * (double) Math.cos(rad_xz);
         g_look[2] = g_eye[2] + 100 * (double) Math.sin(rad_xz);
         g_look[1] = g_eye[1];
-        //½¨Á¢modelview¾ØÕó·½Ïò
+        //ï¿½ï¿½ï¿½ï¿½modelviewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         /*glu.gluLookAt(g_eye[0], g_eye[1], g_eye[2],
                 g_look[0], g_look[1] + g_elev, g_look[2],
                 0.0, 0.0, 0.0);*/
 
         /*
-        * g_eye[0]ÊÇÀ­½ü¾àÀë
-        * g_eye[1]ÊÇ½«ÉãÏñ»úÏòÉÏÌ§
-        * g_eye[2]ÊÇ½«ÉãÏñ»úÏòÓÒ
+        * g_eye[0]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        * g_eye[1]ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì§
+        * g_eye[2]ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         * */
         glu.gluLookAt(1.0f, 5, -20,//40,2,-40
                 0, g_look[1]-90, 0,
@@ -194,15 +194,15 @@ public class Bsipic {
     }
 
     void DrawGround() {
-        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//±£´æÏÖÓÐÑÕÉ«ÊôÊµÐÔ
-        gl.glEnable(GL2.GL_BLEND);//Ê¹ÓÃÎÆÀí
+        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Êµï¿½ï¿½
+        gl.glEnable(GL2.GL_BLEND);//Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         gl.glPushMatrix();
-        gl.glColor3f(0.5f, 0.7f, 1.0f);//ÉèÖÃÀ¶É«
-        gl.glTranslatef(0.0f, 0.0f, 0.0f);      //Æ½Ì¨µÄ¶¨Î»
+        gl.glColor3f(0.5f, 0.7f, 1.0f);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        gl.glTranslatef(0.0f, 0.0f, 0.0f);      //Æ½Ì¨ï¿½Ä¶ï¿½Î»
         int size0 = (int) (MAP * 2);
         gl.glLineWidth(1.0f);
 
-        gl.glBegin(GL2.GL_LINES);//»®Ò»½çÏß
+        gl.glBegin(GL2.GL_LINES);//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
         for (int x = -size0; x < size0; x += 4) {
             gl.glVertex3i(x, 0, -size0);
             gl.glVertex3i(x, 0, size0);
@@ -214,44 +214,44 @@ public class Bsipic {
         gl.glEnd();
         gl.glPopMatrix();
         gl.glDisable(GL2.GL_BLEND);
-        gl.glPopAttrib();//»Ö¸´Ç°Ò»ÊôÐÔ
+        gl.glPopAttrib();//ï¿½Ö¸ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½
     }
 
-    void airplane(float x, float y, float z)//×éºÏ·É»ú
+    void airplane(float x, float y, float z)//ï¿½ï¿½Ï·É»ï¿½
     {
         glu = new GLU();
-        gl.glPushMatrix();//Ñ¹Èë¶ÑÕ»
-        gl.glTranslatef(x, y, z);//·É»úµÄ¶¨Î»
-        gl.glRotatef(-r2, 0.0f, 1.0f, 0.0f);//·É»úµÄÐý×ª
-        gl.glTranslatef(30.0f, 0.0f, 0.0f);      //·É»úµÄÐý×ª°ë¾¶
-        gl.glRotatef(30.0f, 0.0f, 0.0f, 1.0f);//·É»úµÄÇãÐ±
+        gl.glPushMatrix();//Ñ¹ï¿½ï¿½ï¿½Õ»
+        gl.glTranslatef(x, y, z);//ï¿½É»ï¿½ï¿½Ä¶ï¿½Î»
+        gl.glRotatef(-r2, 0.0f, 1.0f, 0.0f);//ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½×ª
+        gl.glTranslatef(30.0f, 0.0f, 0.0f);      //ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ë¾¶
+        gl.glRotatef(30.0f, 0.0f, 0.0f, 1.0f);//ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½Ð±
         //=============================================
         gl.glPushMatrix();//
-        gl.glRotatef(-r2 * 30.0f, 0.0f, 0.0f, 1.0f);//·É»úµÄÐý×ª
+        gl.glRotatef(-r2 * 30.0f, 0.0f, 0.0f, 1.0f);//ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½×ª
         gl.glColor3f(0.0f, 0.0f, 1.0f);
-        this.box(1.0f, 0.1f, 0.02f);        //·½£¬ÂÝÐý½¬
+        this.box(1.0f, 0.1f, 0.02f);        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         gl.glPopMatrix();
-        gl.glColor3f(1.0f, 1.0f, 1.0f);     //°×É«
-        gl.glEnable(GL2.GL_TEXTURE_2D);      //Ê¹ÓÃÎÆÀí
+        gl.glColor3f(1.0f, 1.0f, 1.0f);     //ï¿½ï¿½É«
+        gl.glEnable(GL2.GL_TEXTURE_2D);      //Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         gl.glBindTexture(GL2.GL_TEXTURE_2D, textureArr[1]);//
-        gl.glTranslatef(0.0f, 0.0f, -0.5f); //ºóÒÆ
-        glu.gluSphere(g_text, 0.4f, 8, 8);  //»úÍ·Ô°(°ë¾¶)
+        gl.glTranslatef(0.0f, 0.0f, -0.5f); //ï¿½ï¿½ï¿½ï¿½
+        glu.gluSphere(g_text, 0.4f, 8, 8);  //ï¿½ï¿½Í·Ô°(ï¿½ë¾¶)
         //=============================================
-        gl.glTranslatef(0.0f, -0.0f, -2);   //Î»ÖÃµ÷Õû,Óë»úÍ·¶Ô½Ó
-        glu.gluCylinder(g_text, 0.4, 0.4, 2.0, 8, 4);//»úÉí,Ô°Öù(°ë¾¶¡¢¸ß)
+        gl.glTranslatef(0.0f, -0.0f, -2);   //Î»ï¿½Ãµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Í·ï¿½Ô½ï¿½
+        glu.gluCylinder(g_text, 0.4, 0.4, 2.0, 8, 4);//ï¿½ï¿½ï¿½ï¿½,Ô°ï¿½ï¿½(ï¿½ë¾¶ï¿½ï¿½ï¿½ï¿½)
         //=====================================================
-        gl.glRotatef(-180.0f, 1.0f, 0.0f, 0.0f); //½Ç¶Èµ÷Õû
-        gl.glTranslatef(0.0f, -0.0f, 0.0f); //Î»ÖÃµ÷Õû,Ëõ½øÒ»µã
-        glu.gluCylinder(g_text, 0.4, 0.1, 1.5, 8, 4);//»úÎ²,Ô°×¶(µ×°ë¾¶¡¢¸ß)
+        gl.glRotatef(-180.0f, 1.0f, 0.0f, 0.0f); //ï¿½Ç¶Èµï¿½ï¿½ï¿½
+        gl.glTranslatef(0.0f, -0.0f, 0.0f); //Î»ï¿½Ãµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+        glu.gluCylinder(g_text, 0.4, 0.1, 1.5, 8, 4);//ï¿½ï¿½Î²,Ô°×¶(ï¿½×°ë¾¶ï¿½ï¿½ï¿½ï¿½)
         //======================================================
         gl.glBindTexture(GL2.GL_TEXTURE_2D, textureArr[0]);//
-        gl.glTranslatef(0.0f, -0.8f, 1.2f); //Î»ÖÃµ÷Õû
-        this.box(1.0f, 0.05f, 0.3f);            //ºóÒí
-        gl.glTranslatef(0.0f, 0.1f, 0.0f);  //Î»ÖÃµ÷Õû
-        this.box(0.05f, 0.6f, 0.30f);           //ºó´¹Òí
+        gl.glTranslatef(0.0f, -0.8f, 1.2f); //Î»ï¿½Ãµï¿½ï¿½ï¿½
+        this.box(1.0f, 0.05f, 0.3f);            //ï¿½ï¿½ï¿½ï¿½
+        gl.glTranslatef(0.0f, 0.1f, 0.0f);  //Î»ï¿½Ãµï¿½ï¿½ï¿½
+        this.box(0.05f, 0.6f, 0.30f);           //ï¿½ï¿½ï¿½ï¿½
         //======================================================
-        gl.glTranslatef(0.0f, 0.7f, -1.9f); //Î»ÖÃµ÷Õû
-        this.box(3.0f, 0.05f, 0.5f);                //Ç°Òí
+        gl.glTranslatef(0.0f, 0.7f, -1.9f); //Î»ï¿½Ãµï¿½ï¿½ï¿½
+        this.box(3.0f, 0.05f, 0.5f);                //Ç°ï¿½ï¿½
         //======================================================
         gl.glDisable(GL2.GL_TEXTURE_2D);
         gl.glPopMatrix();
@@ -264,62 +264,64 @@ public class Bsipic {
     void picterSide(float x,float y,float z){
         GLUT glut = new GLUT();
 
-        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//±£´æÏÖÓÐÑÕÉ«ÊôÊµÐÔ
+        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Êµï¿½ï¿½
 
-        gl.glPushMatrix();//°ÚÏß==============================
-        gl.glTranslatef(x, y + 2.1f, z);        //¶¨Î»
+        gl.glPushMatrix();//ï¿½ï¿½ï¿½ï¿½==============================
+        gl.glTranslatef(x, y + 2.1f, z);        //ï¿½ï¿½Î»
 
-        //¹ì¼£Ïß
+        //ï¿½ì¼£ï¿½ï¿½
         gl.glLineWidth(0.5f);
         gl.glBegin(GL.GL_LINES);
         gl.glVertex3f(-1f,0f, -0.1f);
         gl.glVertex3f(1f,0f, -0.1f);
         gl.glEnd();
 
-        gl.glRotatef(r + 40.0f, 0.0f, 1.0f, 0.0f);  //À×´ïÐý×ª2
+        gl.glRotatef(r + 40.0f, 0.0f, 1.0f, 0.0f);  //ï¿½×´ï¿½ï¿½ï¿½×ª2
         //=======================================
-        //gl.glColor3f(1.0f, 1.0f, 1.0f);     //°×É«
+        //gl.glColor3f(1.0f, 1.0f, 1.0f);     //ï¿½ï¿½É«
 
 
         gl.glColor3f(1.0f, 1.0f, 0.0f);
-        //Éþ×Ó
+        //ï¿½ï¿½ï¿½ï¿½
         gl.glLineWidth(2.5f);
         gl.glBegin(GL.GL_LINES);
         gl.glVertex3f(0f,2f, 0);
         gl.glVertex3f(1f,0f, 0);
         gl.glEnd();
 
-        gl.glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);  //ÅÌµÄ½Ç¶Èµ÷Õû£¬Ñö30¶È
+        gl.glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);  //ï¿½ÌµÄ½Ç¶Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½30ï¿½ï¿½
         //glut.glutWireCone(1f,2f,20,20);
         gl.glTranslatef(1f,0,0);
         //gl.glColor3f(0.0f, 0.0f, 0.0f);
         glut.glutSolidSphere(0.15,12,12);
 
         gl.glPopMatrix();
-        gl.glPopAttrib();//»Ö¸´Ç°Ò»ÊôÐÔ
+        gl.glPopAttrib();//ï¿½Ö¸ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½
     }
 
     void picterStereo(float x, float y, float z) {
         GLUT glut = new GLUT();
 
-        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//±£´æÏÖÓÐÑÕÉ«ÊôÊµÐÔ
+        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Êµï¿½ï¿½
 
-        gl.glPushMatrix();//°ÚÏß==============================
-        gl.glTranslatef(x, y + 2.1f, z);        //À×´ïµÄ¶¨Î»1
+        gl.glPushMatrix();//ï¿½ï¿½ï¿½ï¿½==============================
+        gl.glTranslatef(x, y + 2.1f, z);        //ï¿½×´ï¿½Ä¶ï¿½Î»1
         //gl.glTranslatef(0, 1f, 0f);
-        gl.glRotatef(r + 40.0f, 0.0f, 1.0f, 0.0f);  //À×´ïÐý×ª2
+        gl.glRotatef(r + 40.0f, 0.0f, 1.0f, 0.0f);  //ï¿½×´ï¿½ï¿½ï¿½×ª2
         //=======================================
-        gl.glColor3f(1.0f, 1.0f, 1.0f);     //°×É«
-        gl.glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);  //ÅÌµÄ½Ç¶Èµ÷Õû£¬Ñö30¶È
+        gl.glColor3f(1.0f, 1.0f, 1.0f);     //ï¿½ï¿½É«
+        gl.glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);  //ï¿½ÌµÄ½Ç¶Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½30ï¿½ï¿½
 
 
-        //Ö÷Ô²×¶
+        //ï¿½ï¿½Ô²×¶
         gl.glLineWidth(0.5f);
+
+        gl.glColor3f(0.0f, 0.0f, 0.0f);
         glut.glutWireCone(1f,2f,20,20);
 
 
-        gl.glColor3f(1.0f, 1.0f, 0.0f);     //°×É«
-        //Éþ×Ó
+        gl.glColor3f(1.0f, 1.0f, 0.0f);     //ï¿½ï¿½É«
+        //ï¿½ï¿½ï¿½ï¿½
         gl.glLineWidth(2.5f);
         gl.glBegin(GL.GL_LINES);
         gl.glVertex3f(0.0f, 0.0f, 2.0f);
@@ -331,49 +333,49 @@ public class Bsipic {
 
 
         gl.glPopMatrix();
-        gl.glPopAttrib();//»Ö¸´Ç°Ò»ÊôÐÔ
+        gl.glPopAttrib();//ï¿½Ö¸ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½
 
     }
 
     void picterTop(float x, float y, float z) {
         GLUT glut = new GLUT();
 
-        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//±£´æÏÖÓÐÑÕÉ«ÊôÊµÐÔ
+        gl.glPushAttrib(GL2.GL_CURRENT_BIT);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Êµï¿½ï¿½
 
-        gl.glPushMatrix();//°ÚÏß==============================
-        gl.glTranslatef(x, y + 2.1f, z+1.0f);        //¶¨Î»
+        gl.glPushMatrix();//ï¿½ï¿½ï¿½ï¿½==============================
+        gl.glTranslatef(x, y + 2.1f, z+1.0f);        //ï¿½ï¿½Î»
 
 
-        gl.glRotatef(r + 40.0f, 0.0f, 1.0f, 0.0f);  //À×´ïÐý×ª2
+        gl.glRotatef(r + 40.0f, 0.0f, 1.0f, 0.0f);  //ï¿½×´ï¿½ï¿½ï¿½×ª2
         //=======================================
-        gl.glColor3f(1.0f, 1.0f, 1.0f);     //°×É«
-        gl.glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);  //ÅÌµÄ½Ç¶Èµ÷Õû£¬Ñö30¶È
+        gl.glColor3f(1.0f, 1.0f, 1.0f);     //ï¿½ï¿½É«
+        gl.glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);  //ï¿½ÌµÄ½Ç¶Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½30ï¿½ï¿½
 
 
-        //¹ì¼£
-        gl.glBegin(GL2.GL_POLYGON);// ÉÈÐÎÁ¬ÐøÌî³äÈý½ÇÐÎ´®
+        //ï¿½ì¼£
+        gl.glBegin(GL2.GL_POLYGON);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½
         //gl.glVertex3f(0, 0, 0.0f);
         for (int i = 0; i <= 720; i += 10) {
             float p = (float) (i * 3.14 / 180);
-            gl.glVertex3f((float) Math.sin(p), (float) Math.cos(p), 0.0f);// Ô°¹ì¼£
+            gl.glVertex3f((float) Math.sin(p), (float) Math.cos(p), 0.0f);// Ô°ï¿½ì¼£
         }
         gl.glEnd();
 
 
         gl.glColor3f(1.0f, 1.0f, 0.0f);
-        //Éþ×Ó
+        //ï¿½ï¿½ï¿½ï¿½
         gl.glLineWidth(2.5f);
         gl.glBegin(GL.GL_LINES);
         gl.glVertex3f(0.0f,0.0f, 0);
         gl.glVertex3f(1.0f,0.0f, 0);
         gl.glEnd();
 
-        //glut.glutWireCone(1f,2f,20,20);Ö÷Ô²×¶
+        //glut.glutWireCone(1f,2f,20,20);ï¿½ï¿½Ô²×¶
         gl.glTranslatef(1f,0,0);
         glut.glutSolidSphere(0.2,10,10);
 
         gl.glPopMatrix();
-        gl.glPopAttrib();//»Ö¸´Ç°Ò»ÊôÐÔ
+        gl.glPopAttrib();//ï¿½Ö¸ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½
 
     }
 
@@ -392,9 +394,9 @@ public class Bsipic {
 
 
     private void box(float x, float y, float z) {
-        gl.glPushMatrix();//Ñ¹Èë¶ÑÕ»
+        gl.glPushMatrix();//Ñ¹ï¿½ï¿½ï¿½Õ»
         gl.glScalef(x, y, z);
-        gl.glEnable(GL2.GL_TEXTURE_2D);      //Ê¹ÓÃÎÆÀí
+        gl.glEnable(GL2.GL_TEXTURE_2D);      //Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         gl.glBegin(GL2.GL_QUADS);
         gl.glTexCoord2f(0.0f, 0.0f);
         gl.glVertex3f(-1.0f, -1.0f, 1.0f);// Ç°
@@ -405,7 +407,7 @@ public class Bsipic {
         gl.glTexCoord2f(0.0f, 1.0f);
         gl.glVertex3f(-1.0f, 1.0f, 1.0f);
         gl.glTexCoord2f(1.0f, 0.0f);
-        gl.glVertex3f(-1.0f, -1.0f, -1.0f);// ºó
+        gl.glVertex3f(-1.0f, -1.0f, -1.0f);// ï¿½ï¿½
         gl.glTexCoord2f(1.0f, 1.0f);
         gl.glVertex3f(-1.0f, 1.0f, -1.0f);
         gl.glTexCoord2f(0.0f, 1.0f);
@@ -413,7 +415,7 @@ public class Bsipic {
         gl.glTexCoord2f(0.0f, 0.0f);
         gl.glVertex3f(1.0f, -1.0f, -1.0f);
         gl.glTexCoord2f(0.0f, 1.0f);
-        gl.glVertex3f(-1.0f, 1.0f, -1.0f);// ÉÏ
+        gl.glVertex3f(-1.0f, 1.0f, -1.0f);// ï¿½ï¿½
         gl.glTexCoord2f(0.0f, 0.0f);
         gl.glVertex3f(-1.0f, 1.0f, 1.0f);
         gl.glTexCoord2f(1.0f, 0.0f);
@@ -421,7 +423,7 @@ public class Bsipic {
         gl.glTexCoord2f(1.0f, 1.0f);
         gl.glVertex3f(1.0f, 1.0f, -1.0f);
         gl.glTexCoord2f(1.0f, 1.0f);
-        gl.glVertex3f(-1.0f, -1.0f, -1.0f);// ÏÂ
+        gl.glVertex3f(-1.0f, -1.0f, -1.0f);// ï¿½ï¿½
         gl.glTexCoord2f(0.0f, 1.0f);
         gl.glVertex3f(1.0f, -1.0f, -1.0f);
         gl.glTexCoord2f(0.0f, 0.0f);
@@ -429,7 +431,7 @@ public class Bsipic {
         gl.glTexCoord2f(1.0f, 0.0f);
         gl.glVertex3f(-1.0f, -1.0f, 1.0f);
         gl.glTexCoord2f(1.0f, 0.0f);
-        gl.glVertex3f(1.0f, -1.0f, -1.0f);// ×ó
+        gl.glVertex3f(1.0f, -1.0f, -1.0f);// ï¿½ï¿½
         gl.glTexCoord2f(1.0f, 1.0f);
         gl.glVertex3f(1.0f, 1.0f, -1.0f);
         gl.glTexCoord2f(0.0f, 1.0f);
@@ -437,7 +439,7 @@ public class Bsipic {
         gl.glTexCoord2f(0.0f, 0.0f);
         gl.glVertex3f(1.0f, -1.0f, 1.0f);
         gl.glTexCoord2f(0.0f, 0.0f);
-        gl.glVertex3f(-1.0f, -1.0f, -1.0f);// ÓÒ
+        gl.glVertex3f(-1.0f, -1.0f, -1.0f);// ï¿½ï¿½
         gl.glTexCoord2f(1.0f, 0.0f);
         gl.glVertex3f(-1.0f, -1.0f, 1.0f);
         gl.glTexCoord2f(1.0f, 1.0f);

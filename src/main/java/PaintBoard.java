@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /*
- * ÓÃÓÚ»æÖÆ¶¯Ì¬µãÏß
+ * ï¿½ï¿½ï¿½Ú»ï¿½ï¿½Æ¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
  * */
 public class PaintBoard extends Painter {
 
@@ -12,10 +12,10 @@ public class PaintBoard extends Painter {
 
     private boolean change = true;
 
-    private double angle_side = 31;//²àÊÓÍ¼Æ«×ª½Ç
-    private double angle_top = 0;//¸©ÊÓÍ¼Æ«×ª½Ç
+    private double angle_side = 31;//ï¿½ï¿½ï¿½ï¿½Í¼Æ«×ªï¿½ï¿½
+    private double angle_top = 0;//ï¿½ï¿½ï¿½ï¿½Í¼Æ«×ªï¿½ï¿½
     private float speed = 0;
-    private static final int length = 100;//Éþ³¤
+    private static final int length = 100;//ï¿½ï¿½ï¿½ï¿½
 
     public PaintBoard(){
         //this.setSize(500,500);
@@ -24,8 +24,8 @@ public class PaintBoard extends Painter {
     }
 
     private void initComponent(){
-        node_side_view = new Node(200,100);//²âÊÔÍ¼½ÚµãÎ»ÖÃ
-        node_top_view = new Node(200,400);//¸©ÊÓÍ¼½ÚµãÎ»ÖÃ
+        node_side_view = new Node(200,100);//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Úµï¿½Î»ï¿½ï¿½
+        node_top_view = new Node(200,400);//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Úµï¿½Î»ï¿½ï¿½
     }
 
     @Override
@@ -61,7 +61,7 @@ public class PaintBoard extends Painter {
     }
 
     /*
-     * ²àÊÓÍ¼
+     * ï¿½ï¿½ï¿½ï¿½Í¼
      * */
     private void paintSideView(Graphics g,double angle,int len){
         double radian = (angle / 180) * Math.PI;
@@ -72,7 +72,7 @@ public class PaintBoard extends Painter {
     }
 
     /*
-     * ¸©ÊÓÍ¼
+     * ï¿½ï¿½ï¿½ï¿½Í¼
      * */
     private void paintTopView(Graphics g,double angle,int len){
         double radian = (angle / 180) * Math.PI;
@@ -83,6 +83,18 @@ public class PaintBoard extends Painter {
 
     public void update(float speed) {
         this.speed = speed;
+    }
+
+    public void update(float roll_degree, float pit_degree) {
+
+    }
+
+    public void update1(String str) {
+
+    }
+
+    public void update2(float roll_degree, float pit_degree) {
+
     }
 
 
